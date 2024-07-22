@@ -1,0 +1,10 @@
+# Da build directory
+build
+
+# IDE-related directories
+#-------(For VScode)----------
+.vscode
+#-------(For Visual Studio)----------
+.vs
+#-------(For Jetbrains products such as Clion)------
+.idea
