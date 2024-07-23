@@ -4,12 +4,6 @@ branches:
   only:
     - master
 
-- for:
-   - matrix:
-      only:
-       - LLVM (Clang) 17.0.0
-       - CMake 3.28.1
-  clone_folder: /dev/sumo
 
 image:
   - LLVM 18.1.6 x64
