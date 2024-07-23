@@ -9,14 +9,6 @@ image:
   - LLVM (Clang) 17.0.0
   - CMake 3.28.1
 
-matrix:
-  include:
-    - image: LLVM 18.1.6 x64
-      clone_folder: C:\sumo
-    - image: LLVM (Clang) 17.0.0
-      clone_folder: /dev/sumo
-    - image: CMake 3.28.1
-      clone_folder: /dev/sumo
 
 build_script:
   - cd {clone_folder}
