@@ -1,13 +1,13 @@
-version: 1.0.{build}-{branch}-{configuration}-{platform}
+version: 1.{build}-{branch}
 
 branches:
   only:
     - master
 
 image:
-  - LLVM 18.1.6 x64
-  - LLVM (Clang) 17.0.0
-  - CMake 3.28.1
+  - Visual Studio 2022
+  - Ubuntu2024
+  - macos-monterey
 
 
 build_script:
