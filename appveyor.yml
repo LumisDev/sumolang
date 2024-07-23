@@ -6,7 +6,7 @@ branches:
 
 image:
   - Visual Studio 2022
-  - Ubuntu2024
+  - Ubuntu2204
   - macos-monterey
 
 
