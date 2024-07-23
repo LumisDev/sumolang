@@ -10,7 +10,28 @@ image:
   - macos-monterey
 
 
-build_script:
-  - cd {clone_folder}
-  - ./sumo cfg
-  - ./sumo build
+for:
+  -
+    matrix:
+       only:
+        - Visual Studio 2022
+    build_script:
+      - cd C:\projects\sumolang
+      - sumo cfg
+      - sumo build
+  -
+    matrix:
+       only:
+        - macos-monterey
+    build_script:
+      - cd /Users/appveyor/projects/sumolang
+      - sh ./sumo.sh cfg
+      - sh ./sumo.sh build
+  -
+    matrix:
+        only:
+          - Ubuntu2204
+    build_script:
+      - cd /home/appveyor/projects/sumolang
+      - sh ./sumo.sh cfg
+      - sh ./sumo.sh build
