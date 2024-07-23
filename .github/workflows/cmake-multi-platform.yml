@@ -39,9 +39,6 @@ jobs:
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
     - name: Setup Ninja
       uses: ashutoshvarma/setup-ninja@v1.1
-      with:
-        # Override default platform detection logic. Accepted values are [mac, linux, win]
-        platform: ${{ matrix.ninja_os }}
 
     - name: LLVM Install
       # You may pin to the exact commit or the version.
