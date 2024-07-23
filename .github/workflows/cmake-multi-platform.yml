@@ -26,6 +26,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
         build_type: [Release, Debug, MinSizeRel]
+        ninja_os: [linux, win, mac]
 
     steps:
     - uses: actions/checkout@v4
@@ -36,6 +37,16 @@ jobs:
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+    - name: Setup Ninja
+      uses: ashutoshvarma/setup-ninja@v1.1
+      with:
+        # Override default platform detection logic. Accepted values are [mac, linux, win]
+        platform: ${{ matrix.ninja_os }}
+
+    - name: LLVM Install
+      # You may pin to the exact commit or the version.
+      # uses: FreeMasen/llvm-install-action@44788e07be932efaafa703a38e259fa09b6adbd8
+      uses: FreeMasen/llvm-install-action@v1.0.0
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
